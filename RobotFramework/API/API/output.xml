@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.11.2 on win32)" generated="20230603 23:25:48.258" rpa="false" schemaversion="3">
+<suite id="s1" name="API" source="C:\Users\marcio\PycharmProjects\robotframework\robotframeworktests\API.robot">
+<test id="s1-t1" name="API_GET_TEST 1" line="12">
+<kw name="Set Test Message" library="BuiltIn">
+<arg>checking GET response</arg>
+<doc>Sets message for the current test case.</doc>
+<msg timestamp="20230603 23:25:48.472" level="INFO">Set test message to:
+checking GET response</msg>
+<status status="PASS" starttime="20230603 23:25:48.472" endtime="20230603 23:25:48.472"/>
+</kw>
+<kw name="GET" library="RequestsLibrary">
+<var>${GET_response1}</var>
+<arg>https://restful-booker.herokuapp.com</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20230603 23:25:49.195" level="INFO">GET Request : url=https://restful-booker.herokuapp.com/ 
+ path_url=/ 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20230603 23:25:49.196" level="INFO">GET Response : url=https://restful-booker.herokuapp.com/ 
+ status=200, reason=OK 
+ headers={'Server': 'Cowboy', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Accept-Ranges': 'bytes', 'Cache-Control': 'public, max-age=0', 'Last-Modified': 'Thu, 02 Mar 2023 07:50:52 GMT', 'Etag': 'W/"10ca-186a14d6f60"', 'Content-Type': 'text/html; charset=UTF-8', 'Content-Length': '4298', 'Date': 'Sat, 03 Jun 2023 21:25:49 GMT', 'Via': '1.1 vegur'} 
+ body=&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Welcome to Restful-Booker&lt;/title&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+    &lt;link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet"&gt;
+    &lt;link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet"&gt;
+    &lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"&gt;
+    &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"&gt;&lt;/script&gt;
+    &lt;script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"&gt;&lt;/script&gt;
+    &lt;style&gt;
+        h1, h2, h3, h4, h5 {
+            font-family: 'Cabin', Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+
+        p {
+            font-size: 1.2em;
+            font-family: 'Muli', Arial, Helvetica, sans-serif;
+        }
+	&lt;/style&gt;
+
+  &lt;!-- Google tag (gtag.js) --&gt;
+  &lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-2Q48X98CJ6"&gt;&lt;/script&gt;
+  &lt;script&gt;
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-2Q48X98CJ6');
+  &lt;/script&gt;
+
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div class="jumbotron p-4"&gt;
+      &lt;div class="container"&gt;
+        &lt;div class="row"&gt;
+          &lt;div class="col-12 text-center"&gt;
+            &lt;h1&gt;Welcome to Restful-Booker&lt;/h1&gt;
+            &lt;p&gt;An API playground created by &lt;a href="http://mwtestconsultancy.co.uk/"&gt;Mark Winteringham&lt;/a&gt; for those wanting to learn more about API testing and tools&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="row"&gt;
+          &lt;div class="col-12 text-center"&gt;
+            &lt;p&gt;&lt;a href="https://twitter.com/2bittester" alt="Twitter"&gt;@2bittester&lt;/a&gt; | &lt;a href="http://mwtestconsultancy.co.uk/" alt="MWTestConsultancy Website"&gt;Website&lt;/a&gt; | &lt;a href="https://github.com/mwinteringham/restful-booker" alt="API Code"&gt;Code&lt;/a&gt; | &lt;a href="/apidoc/index.html" alt="API documentation"&gt;API Docs&lt;/a&gt;&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="container"&gt;
+      &lt;div class="row"&gt;
+        &lt;div class="col-12"&gt;
+        	&lt;p&gt;Welcome to Restful-booker an API that you can use to learn more about API Testing or try out API testing tools against. Restful-booker is a &lt;span style="color: red; font-weight: bold"&gt;C&lt;/span&gt;reate &lt;span style="color: red; font-weight: bold"&gt;R&lt;/span&gt;ead &lt;span style="color: red; font-weight: bold"&gt;U&lt;/span&gt;pdate &lt;span style="color: red; font-weight: bold"&gt;D&lt;/span&gt;elete Web API that comes with authentication features and loaded with a bunch of bugs for you to explore. The API comes pre-loaded with 10 records for you to work with &lt;span style="font-weight: bold"&gt;and resets itself every 10 minutes back to that default state.&lt;/span&gt; Restful-booker also comes with &lt;a href="/apidoc/index.html" alt="API documentation"&gt;detailed API documentation&lt;/a&gt; to help get you started with your API testing straight away.&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="row"&gt;
+          &lt;div class="col-12"&gt;
+				    &lt;h2&gt;Support me and Restful-Booker&lt;/h2&gt;
+				    &lt;br /&gt;
+				    &lt;p&gt;Restful-booker is a free to use API for practising testing, but if you enjoy using this API please consider supporting me by:&lt;/p&gt;
+          &lt;/div&gt;  
+      &lt;/div&gt;
+      &lt;div class="row text-center"&gt;
+        &lt;div class="col-4"&gt;
+            &lt;h4 class="pb-2"&gt;Buy my Book&lt;/h4&gt;
+            &lt;a href="https://www.manning.com/?utm_source=winteringham&amp;utm_medium=affiliate&amp;utm_campaign=affiliate&amp;a_aid=winteringham" target="_blank"&gt;&lt;img src="/images/book.jpg" alt="Testing Web APIs" class="img img-fluid w-50 border border-light"&gt;&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class="col-4"&gt;
+            &lt;h4 class="pb-2"&gt;Go Pro with Ministry of Testing&lt;/h4&gt;
+            &lt;a href="https://www.ministryoftesting.com/go-pro?utm_medium=web&amp;utm_source=restful-booker" target="_blank"&gt;&lt;img src="/images/motpro.png" alt="Boost your learning, go Pro" class="img img-fluid w-75"&gt;&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class="col-4"&gt;
+            &lt;h4 class="pb-2"&gt;Attend AiT Training&lt;/h4&gt;
+            &lt;a href="https://automationintesting.com/publictraining/" target="_blank"&gt;&lt;img src="/images/ait.png" alt="Automation in Testing training" class="img img-fluid w-75"&gt;&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+ 
+ </msg>
+<msg timestamp="20230603 23:25:49.196" level="INFO">${GET_response1} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230603 23:25:48.473" endtime="20230603 23:25:49.196"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${GET_response1}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230603 23:25:49.197" endtime="20230603 23:25:49.198"/>
+</kw>
+<doc>Get any reponse</doc>
+<tag>get 1</tag>
+<status status="PASS" starttime="20230603 23:25:48.472" endtime="20230603 23:25:49.199">checking GET response</status>
+</test>
+<test id="s1-t2" name="API_GET_TEST 2" line="19">
+<kw name="Set Test Message" library="BuiltIn">
+<arg>getting users list</arg>
+<doc>Sets message for the current test case.</doc>
+<msg timestamp="20230603 23:25:49.202" level="INFO">Set test message to:
+getting users list</msg>
+<status status="PASS" starttime="20230603 23:25:49.202" endtime="20230603 23:25:49.202"/>
+</kw>
+<kw name="GET" library="RequestsLibrary">
+<var>${GET_response2}</var>
+<arg>${url}/users</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20230603 23:25:49.393" level="INFO">GET Request : url=https://reqres.in/api/users 
+ path_url=/api/users 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20230603 23:25:49.393" level="INFO">GET Response : url=https://reqres.in/api/users 
+ status=200, reason=OK 
+ headers={'Date': 'Sat, 03 Jun 2023 21:25:49 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"3e4-2RLXvr5wTg9YQ6aH95CkYoFNuO8"', 'Via': '1.1 vegur', 'Cache-Control': 'max-age=14400', 'CF-Cache-Status': 'HIT', 'Age': '1963', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=utlMXbx%2Fi66tvkuQudWzTKkZeplJxGO9kW3%2FxsD66ZTr0u%2F43r%2B9ELBeBgtl8TnWUcW%2B9nAbQ537Oqip2O1mEU95%2FDOwrY8nbGgnCwDGhgCy87TWhFVX2Z2Bq%2BJaUM0SQVFLl%2BXZMg%3D%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '7d1b02ca6d1ebf3d-WAW', 'Content-Encoding': 'gzip'} 
+ body={"page":1,"per_page":6,"total":12,"total_pages":2,"data":[{"id":1,"email":"george.bluth@reqres.in","first_name":"George","last_name":"Bluth","avatar":"https://reqres.in/img/faces/1-image.jpg"},{"id":2,"email":"janet.weaver@reqres.in","first_name":"Janet","last_name":"Weaver","avatar":"https://reqres.in/img/faces/2-image.jpg"},{"id":3,"email":"emma.wong@reqres.in","first_name":"Emma","last_name":"Wong","avatar":"https://reqres.in/img/faces/3-image.jpg"},{"id":4,"email":"eve.holt@reqres.in","first_name":"Eve","last_name":"Holt","avatar":"https://reqres.in/img/faces/4-image.jpg"},{"id":5,"email":"charles.morris@reqres.in","first_name":"Charles","last_name":"Morris","avatar":"https://reqres.in/img/faces/5-image.jpg"},{"id":6,"email":"tracey.ramos@reqres.in","first_name":"Tracey","last_name":"Ramos","avatar":"https://reqres.in/img/faces/6-image.jpg"}],"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}} 
+ </msg>
+<msg timestamp="20230603 23:25:49.394" level="INFO">${GET_response2} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230603 23:25:49.203" endtime="20230603 23:25:49.394"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${GET_response2}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230603 23:25:49.395" endtime="20230603 23:25:49.397"/>
+</kw>
+<doc>List users</doc>
+<tag>get 2</tag>
+<status status="PASS" starttime="20230603 23:25:49.201" endtime="20230603 23:25:49.399">getting users list</status>
+</test>
+<test id="s1-t3" name="API_GET_TEST 3" line="26">
+<kw name="Set Test Message" library="BuiltIn">
+<arg>getting 1 user</arg>
+<doc>Sets message for the current test case.</doc>
+<msg timestamp="20230603 23:25:49.406" level="INFO">Set test message to:
+getting 1 user</msg>
+<status status="PASS" starttime="20230603 23:25:49.405" endtime="20230603 23:25:49.406"/>
+</kw>
+<kw name="GET" library="RequestsLibrary">
+<var>${GET_response3}</var>
+<arg>${url}/4</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20230603 23:25:49.588" level="INFO">GET Request : url=https://reqres.in/api/4 
+ path_url=/api/4 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20230603 23:25:49.588" level="INFO">GET Response : url=https://reqres.in/api/4 
+ status=200, reason=OK 
+ headers={'Date': 'Sat, 03 Jun 2023 21:25:50 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"2c1-N6Rqerxquq2kgQhL51EiSg4x0R8"', 'Via': '1.1 vegur', 'Cache-Control': 'max-age=14400', 'CF-Cache-Status': 'HIT', 'Age': '1955', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=CID1%2FWM5WgQ%2BoQSGBS8R6UMyzBmg6Hh0cXni8LxJGhzjeZz7iPvlJWptmzGtSJBahAQhXW0pOvqAIYA0MnNNSaCq5ZkPHFX%2FQ0AY1K2ZHIlS8wDi69ShUyf44ddTCPuFp9XBCoqEJg%3D%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '7d1b02cb9e4634ec-WAW', 'Content-Encoding': 'gzip'} 
+ body={"page":1,"per_page":6,"total":12,"total_pages":2,"data":[{"id":1,"name":"cerulean","year":2000,"color":"#98B2D1","pantone_value":"15-4020"},{"id":2,"name":"fuchsia rose","year":2001,"color":"#C74375","pantone_value":"17-2031"},{"id":3,"name":"true red","year":2002,"color":"#BF1932","pantone_value":"19-1664"},{"id":4,"name":"aqua sky","year":2003,"color":"#7BC4C4","pantone_value":"14-4811"},{"id":5,"name":"tigerlily","year":2004,"color":"#E2583E","pantone_value":"17-1456"},{"id":6,"name":"blue turquoise","year":2005,"color":"#53B0AE","pantone_value":"15-5217"}],"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}} 
+ </msg>
+<msg timestamp="20230603 23:25:49.589" level="INFO">${GET_response3} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230603 23:25:49.408" endtime="20230603 23:25:49.589"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${GET_response3}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230603 23:25:49.590" endtime="20230603 23:25:49.592"/>
+</kw>
+<doc>List a single user</doc>
+<tag>get 3</tag>
+<status status="PASS" starttime="20230603 23:25:49.404" endtime="20230603 23:25:49.593">getting 1 user</status>
+</test>
+<test id="s1-t4" name="API_GET_TEST 4" line="33">
+<kw name="Set Test Message" library="BuiltIn">
+<arg>getting users' list</arg>
+<doc>Sets message for the current test case.</doc>
+<msg timestamp="20230603 23:25:49.601" level="INFO">Set test message to:
+getting users' list</msg>
+<status status="PASS" starttime="20230603 23:25:49.600" endtime="20230603 23:25:49.601"/>
+</kw>
+<kw name="GET" library="RequestsLibrary">
+<var>${GET_response4}</var>
+<arg>${url}/unknown</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20230603 23:25:49.765" level="INFO">GET Request : url=https://reqres.in/api/unknown 
+ path_url=/api/unknown 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20230603 23:25:49.765" level="INFO">GET Response : url=https://reqres.in/api/unknown 
+ status=200, reason=OK 
+ headers={'Date': 'Sat, 03 Jun 2023 21:25:50 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"2c1-N6Rqerxquq2kgQhL51EiSg4x0R8"', 'Via': '1.1 vegur', 'Cache-Control': 'max-age=14400', 'CF-Cache-Status': 'HIT', 'Age': '1955', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=lKDHY%2F0KebGoY4QDXtk4pCfoIJEsTmb50pK74kGYO16A46JzjgkoOmixaTHazC3V8%2FlqUOgSNsptBKzSEnkZKsiazBRqwCS1NU2HC77IjX%2BGyhvIH52%2FtcN9IvIPNYdCUeH4UuQDQQ%3D%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '7d1b02ccc98c3545-WAW', 'Content-Encoding': 'gzip'} 
+ body={"page":1,"per_page":6,"total":12,"total_pages":2,"data":[{"id":1,"name":"cerulean","year":2000,"color":"#98B2D1","pantone_value":"15-4020"},{"id":2,"name":"fuchsia rose","year":2001,"color":"#C74375","pantone_value":"17-2031"},{"id":3,"name":"true red","year":2002,"color":"#BF1932","pantone_value":"19-1664"},{"id":4,"name":"aqua sky","year":2003,"color":"#7BC4C4","pantone_value":"14-4811"},{"id":5,"name":"tigerlily","year":2004,"color":"#E2583E","pantone_value":"17-1456"},{"id":6,"name":"blue turquoise","year":2005,"color":"#53B0AE","pantone_value":"15-5217"}],"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}} 
+ </msg>
+<msg timestamp="20230603 23:25:49.766" level="INFO">${GET_response4} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230603 23:25:49.602" endtime="20230603 23:25:49.766"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${GET_response4}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230603 23:25:49.768" endtime="20230603 23:25:49.769"/>
+</kw>
+<doc>List resources</doc>
+<tag>get 4</tag>
+<status status="PASS" starttime="20230603 23:25:49.598" endtime="20230603 23:25:49.770">getting users' list</status>
+</test>
+<test id="s1-t5" name="API_POST_TEST 1" line="40">
+<kw name="Set Test Message" library="BuiltIn">
+<arg>getting users' list</arg>
+<doc>Sets message for the current test case.</doc>
+<msg timestamp="20230603 23:25:49.777" level="INFO">Set test message to:
+getting users' list</msg>
+<status status="PASS" starttime="20230603 23:25:49.776" endtime="20230603 23:25:49.777"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${register_json}</var>
+<arg>first_name=Joe</arg>
+<arg>last_name=Doe</arg>
+<arg>email=joedoe@gmail.com</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230603 23:25:49.780" level="INFO">${register_json} = {'first_name': 'Joe', 'last_name': 'Doe', 'email': 'joedoe@gmail.com'}</msg>
+<status status="PASS" starttime="20230603 23:25:49.779" endtime="20230603 23:25:49.780"/>
+</kw>
+<kw name="POST" library="RequestsLibrary">
+<var>${POST_response1}</var>
+<arg>${url}/users</arg>
+<doc>Sends a POST request.</doc>
+<msg timestamp="20230603 23:25:50.022" level="INFO">POST Request : url=https://reqres.in/api/users 
+ path_url=/api/users 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg timestamp="20230603 23:25:50.022" level="INFO">POST Response : url=https://reqres.in/api/users 
+ status=201, reason=Created 
+ headers={'Date': 'Sat, 03 Jun 2023 21:25:50 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '51', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"33-0NPkpX2CF7KOAgo7sdzgEdTxmIM"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=TVpImOlvLOGHtRosci6MRS7XEAdeIpfAWwzX6%2FMu2MVuqlOplJS2QO5D9ENLAHUHdIZ1EczKRLWnyq1ii36PxRoi%2FwUVCm%2BqHaS9nUXEr3l8NlmRIYR4aBD42EcLOmetkTHeG%2BydkA%3D%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '7d1b02cdd83f348b-WAW'} 
+ body={"id":"192","createdAt":"2023-06-03T21:25:50.442Z"} 
+ </msg>
+<msg timestamp="20230603 23:25:50.022" level="INFO">${POST_response1} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20230603 23:25:49.781" endtime="20230603 23:25:50.022"/>
+</kw>
+<kw name="GET" library="RequestsLibrary">
+<var>${GET_response2}</var>
+<arg>${url}/status</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20230603 23:25:50.195" level="INFO">GET Request : url=https://reqres.in/api/status 
+ path_url=/api/status 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20230603 23:25:50.195" level="INFO">GET Response : url=https://reqres.in/api/status 
+ status=200, reason=OK 
+ headers={'Date': 'Sat, 03 Jun 2023 21:25:50 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"2c1-N6Rqerxquq2kgQhL51EiSg4x0R8"', 'Via': '1.1 vegur', 'Cache-Control': 'max-age=14400', 'CF-Cache-Status': 'HIT', 'Age': '1954', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=V7SmOfbEP4RAN1yGTcJvLJhwCiG5UkbyajKm4F17%2FcyUhRFel7QccFfQAm70ImHTjFr%2FxrqjlKON3UiawNb46nCMjS%2BxtuRRysvTfCQoMWG9Y5%2Bwfd4BlyENaf1IQXHtGH7Th3u%2Bqg%3D%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '7d1b02cf6dda5043-WAW', 'Content-Encoding': 'gzip'} 
+ body={"page":1,"per_page":6,"total":12,"total_pages":2,"data":[{"id":1,"name":"cerulean","year":2000,"color":"#98B2D1","pantone_value":"15-4020"},{"id":2,"name":"fuchsia rose","year":2001,"color":"#C74375","pantone_value":"17-2031"},{"id":3,"name":"true red","year":2002,"color":"#BF1932","pantone_value":"19-1664"},{"id":4,"name":"aqua sky","year":2003,"color":"#7BC4C4","pantone_value":"14-4811"},{"id":5,"name":"tigerlily","year":2004,"color":"#E2583E","pantone_value":"17-1456"},{"id":6,"name":"blue turquoise","year":2005,"color":"#53B0AE","pantone_value":"15-5217"}],"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}} 
+ </msg>
+<msg timestamp="20230603 23:25:50.195" level="INFO">${GET_response2} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230603 23:25:50.022" endtime="20230603 23:25:50.195"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${POST_response1}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230603 23:25:50.196" endtime="20230603 23:25:50.198"/>
+</kw>
+<doc>Create a user</doc>
+<tag>post 1</tag>
+<status status="PASS" starttime="20230603 23:25:49.775" endtime="20230603 23:25:50.200">getting users' list</status>
+</test>
+<test id="s1-t6" name="API_DELETE" line="49">
+<kw name="Set Test Message" library="BuiltIn">
+<arg>deleting a user</arg>
+<doc>Sets message for the current test case.</doc>
+<msg timestamp="20230603 23:25:50.205" level="INFO">Set test message to:
+deleting a user</msg>
+<status status="PASS" starttime="20230603 23:25:50.205" endtime="20230603 23:25:50.206"/>
+</kw>
+<kw name="DELETE" library="RequestsLibrary">
+<var>${delete}</var>
+<arg>${url}/users/4</arg>
+<doc>Sends a DELETE request.</doc>
+<msg timestamp="20230603 23:25:50.466" level="INFO">DELETE Request : url=https://reqres.in/api/users/4 
+ path_url=/api/users/4 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg timestamp="20230603 23:25:50.466" level="INFO">DELETE Response : url=https://reqres.in/api/users/4 
+ status=204, reason=No Content 
+ headers={'Date': 'Sat, 03 Jun 2023 21:25:50 GMT', 'Content-Length': '0', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"2-vyGp6PvFo4RvsFtPoIWeCReyIC8"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=FN8MRGfCUFuDqtkYrWDGXR8XaOqEcQ0bzs2ixh5JpIHDMqxz1XkYuqtCVJWgD6NQDor5QapZ3S3l6LqZi9u%2FbJM4aFYgT2DuXcmRi4otR%2F%2Bpezf1aTwpUjYTuUKXDif8vcKUn0xU6Q%3D%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '7d1b02d08b7335c7-WAW'} 
+ body=None 
+ </msg>
+<msg timestamp="20230603 23:25:50.466" level="INFO">${delete} = &lt;Response [204]&gt;</msg>
+<status status="PASS" starttime="20230603 23:25:50.207" endtime="20230603 23:25:50.466"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${delete}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230603 23:25:50.466" endtime="20230603 23:25:50.468"/>
+</kw>
+<doc>Deletion</doc>
+<tag>deleting</tag>
+<status status="PASS" starttime="20230603 23:25:50.204" endtime="20230603 23:25:50.468">deleting a user</status>
+</test>
+<doc>My fourth test case includes API tests such as GET, POST and DELETE</doc>
+<status status="PASS" starttime="20230603 23:25:48.262" endtime="20230603 23:25:50.471"/>
+</suite>
+<statistics>
+<total>
+<stat pass="6" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">deleting</stat>
+<stat pass="1" fail="0" skip="0">get 1</stat>
+<stat pass="1" fail="0" skip="0">get 2</stat>
+<stat pass="1" fail="0" skip="0">get 3</stat>
+<stat pass="1" fail="0" skip="0">get 4</stat>
+<stat pass="1" fail="0" skip="0">post 1</stat>
+</tag>
+<suite>
+<stat pass="6" fail="0" skip="0" id="s1" name="API">API</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

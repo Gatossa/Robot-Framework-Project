@@ -1,0 +1,65 @@
+*** Settings ***
+Library     SeleniumLibrary
+Documentation     My first case includes opening the browser, accepting privacy notifications, logging into the website account and after that writing the sentence into the translating text area and eventually logging out.
+
+*** Variables ***
+
+${LOGIN URL}     https://www.reverso.net/text-translation
+${BROWSER}       Chrome
+${username}      testeragata@go2.pl
+${password}      Test1234
+${project_path}    C:/Users/marcio/PycharmProjects/robotframework/screenyreverso
+
+*** Test Cases ***
+
+Myfirstcase
+    [Documentation]   opening the browser, accepting privacy notifications, logging in and out ,  translating a text
+     [Tags]    reverso
+     set test message    log in, translate, log out
+     Open main page
+     Rodo
+     sleep    2
+     Log in
+     sleep    2
+     maximize browser window
+     Write a word     Lubię testy automatyczne
+     Write a word     I na tym kończymy. Dziękujemy za uwagę.
+     sleep    3
+     Log out
+     close browser
+
+*** Keywords ***
+
+Open main page
+    open browser    ${LOGIN URL}   ${BROWSER}
+    capture page screenshot    ${project_path}/screenshot01.png
+
+Rodo
+    wait until element is visible    id:didomi-popup
+    Click Element     id:didomi-notice-agree-button
+    capture page screenshot    ${project_path}/screenshot02.png
+
+Log in
+    Click Element   xpath://app-root/app-translation/app-new-top-bar-desktop//span[@class='simple-user-icon']
+    sleep    3
+    Click Element     xpath://div[@id='cdk-overlay-0']/app-popup-menu-view//span[.='Log in']
+    input text         css:input#Email        ${username}
+    input password     css:input#Password      ${password}
+    click element      xpath://form[@id='account']//button[@class='btn btn-primary btn-submit']
+    sleep    3
+    capture page screenshot    ${project_path}/screenshot03.png
+
+Write a word
+    [Arguments]      ${text}
+    input text   css:body > app-root > app-translation > div > app-translation-box > div.translation-box > div.translation-box-wrapper.box-position-wrapper.full-screen > div.translation-inputs > div.translation-input.translation-input__source.transparent-border-left.transparent-border-bottom.translation-input--ltr.translation-input__source__active > div.translation-input__main > div > div.textarea__container > textarea    ${text}
+    sleep    3
+    capture page screenshot    ${project_path}/screenshot04.png
+    sleep     3
+
+Log out
+    click element    xpath:/html/body/app-root/app-translation/app-new-top-bar-desktop/header/button[1]
+    sleep    3
+    click element     xpath=//div[@id='cdk-overlay-0']/app-popup-menu-view//button[@class='app-popup-menu-view__menu__item']
+    sleep     2
+    capture page screenshot    ${project_path}/screenshot05.png
+

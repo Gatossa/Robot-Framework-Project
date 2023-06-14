@@ -1,0 +1,67 @@
+*** Settings ***
+Library     SeleniumLibrary
+Library     String
+Library     Collections
+Documentation     My third test case includes completing the form fields on the website.
+
+*** Variables ***
+
+${LOGIN URL}     https://itera-qa.azurewebsites.net/home/automation
+${BROWSER}       Chrome
+${email}         testeragata@go2.pl
+${password}      123456789
+${project_path}    C:/Users/marcio/PycharmProjects/robotframework/screenyform
+${xpath}           css:.custom-file-input
+${absolute_file_path}     C:/Users/marcio/OneDrive/Pulpit/studiaAgata/upload.docx
+
+*** Test Cases ***
+
+Mythirdcase
+     [Documentation]    completing the registration form fields
+     [Tags]    form
+
+     set test message   registration form
+     Open main page
+     maximize browser window
+     sleep    2
+     Fill in the fields
+     close browser
+
+*** Keywords ***
+
+Open main page
+    open browser    ${LOGIN URL}   ${BROWSER}
+    capture page screenshot    ${project_path}/screenshot01.png
+
+Fill in the fields
+    input text       id:name      Agata
+    input text       id:phone     1234567891
+    input text       id:email     ${email}
+    input password    id:password    ${password}
+    input text        id:address     Szczecin
+    sleep     2
+    capture page screenshot    ${project_path}/screenshot02.png
+    scroll element into view     id:password
+    sleep     2
+    capture page screenshot    ${project_path}/screenshot03.png
+    sleep     2
+    click button     css:button[name='submit']
+    page should contain radio button    xpath://*[@id="female"]
+    select radio button     optionsRadios    option1
+    capture page screenshot    ${project_path}/screenshot04.png
+    scroll element into view     id:sunday
+    select checkbox    id:monday
+    capture page screenshot    ${project_path}/screenshot05.png
+    sleep     2
+    unselect checkbox    id:monday
+    sleep    2
+    select checkbox    id:sunday
+    capture page screenshot    ${project_path}/screenshot06.png
+    sleep    2
+    scroll element into view     xpath:/html/body/div/div[4]/div[2]/div/select
+    sleep     2
+    select from list by value    xpath:/html/body/div/div[4]/div[2]/div/select    4
+    capture page screenshot     ${project_path}/screenshot07.png
+    sleep      2
+
+

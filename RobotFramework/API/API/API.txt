@@ -1,0 +1,53 @@
+*** Settings ***
+Library     RequestsLibrary
+Library     Collections
+
+*** Variables ***
+
+${url}    https://reqres.in/api
+
+*** Test Cases ***
+
+API_GET_TEST 1
+    [Documentation]    Get any reponse
+    [Tags]     get 1
+    set test message    checking GET response
+    ${GET_response1}    GET    https://restful-booker.herokuapp.com
+    log to console    ${GET_response1}
+
+API_GET_TEST 2
+    [Documentation]     List users
+    [Tags]     get 2
+    set test message    getting users list
+    ${GET_response2}    GET    ${url}/users
+    log to console    ${GET_response2}
+
+API_GET_TEST 3
+    [Documentation]     List a single user
+    [Tags]     get 3
+    set test message    getting 1 user
+    ${GET_response3}    GET    ${url}/4
+    log to console    ${GET_response3}
+
+API_GET_TEST 4
+    [Documentation]     List resources
+    [Tags]     get 4
+    set test message    getting users list
+    ${GET_response4}    GET    ${url}/unknown
+    log to console    ${GET_response4}
+
+API_POST_TEST 1
+       [Documentation]    Create a user
+       [Tags]    post 1
+       set test message    getting users list
+       ${register_json}     create dictionary    first_name=Joe     last_name=Doe    email=joedoe@gmail.com
+       ${POST_response1}    POST    ${url}/users
+       ${GET_response2}    GET    ${url}/status
+       log to console    ${POST_response1}
+
+API_DELETE
+       [Documentation]    Deletion
+       [Tags]    deleting
+       set test message    deleting a user
+       ${delete}    delete     ${url}/users/4
+       log to console    ${delete}

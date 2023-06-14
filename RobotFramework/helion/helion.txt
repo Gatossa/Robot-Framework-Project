@@ -1,0 +1,60 @@
+*** Settings ***
+Library    SeleniumLibrary
+Library     Collections
+Test Teardown    Close Browser
+Documentation    My second case includes opening the website selling books, accepting privacy notifications, creating the list of books' bestsellers and finally finding the chosen book in the previously made books' list.
+
+*** Variables ***
+${HELION URL}     https://helion.pl/kategorie/bestsellery
+${BROWSER}        Chrome
+${project_path}    C:/Users/marcio/PycharmProjects/robotframework/screenyhelion
+
+*** Test Cases ***
+
+Mysecondcase
+     [Documentation]   opening the bestseller page, accepting privacy notifications, maknig the books' list and finding the particular book
+     [Tags]    Helion
+     set test message    making the bestsellers list, finding thr paticular book
+     Open bestseller page
+     Rodo
+     Make a list
+     Find an element    Etyczny haking. Praktyczne wprowadzenie do hakingu
+
+*** Keywords ***
+
+Open bestseller page
+    open browser    ${HELION URL}   ${BROWSER}
+    maximize browser window
+    capture page screenshot    ${project_path}/screenshot01.png
+
+Rodo
+    wait until element is visible    css:a#rodo-ok
+    Click Element     css:a#rodo-ok
+    capture page screenshot    ${project_path}/screenshot02.png
+
+Make a list
+    @{helionbestseller_text}    create list
+    ${helionbestsellerlist}     Get WebElements    xpath://div[@id='center-big-col']/div[12]/ol/li[*]/h2
+
+    click element    xpath://div[@id='center-big-col']//form[@action='#']//div[@class='kategorieWybor']/div[10]/label[@class='changeBest']
+    capture page screenshot    ${project_path}/screenshot03.png
+    log list      ${helionbestsellerlist}
+
+   FOR    ${element}    IN     @{helionbestsellerlist}
+    append to list    ${helionbestseller_text}     ${element.text}
+   END
+
+   log list    ${helionbestseller_text}
+   list should contain value    ${helionbestseller_text}     Etyczny haking. Praktyczne wprowadzenie do hakingu
+
+Find an element
+    [Arguments]    ${chosenbook}
+
+    ${index}  set variable   1
+    ${helionbestsellerlist}     Get WebElements    xpath://div[@id='center-big-col']/div[12]/ol/li[*]/h2
+
+   FOR    ${element}    IN       @{helionbestsellerlist}
+    exit for loop if   '${element.text}' == '${chosenbook}'
+    ${index}    evaluate      ${index} == +1
+
+   END

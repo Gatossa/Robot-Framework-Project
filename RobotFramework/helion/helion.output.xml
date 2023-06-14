@@ -1,0 +1,830 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.11.2 on win32)" generated="20230603 20:02:25.561" rpa="false" schemaversion="3">
+<suite id="s1" name="Helion" source="C:\Users\marcio\PycharmProjects\robotframework\robotframeworktests\helion.robot">
+<test id="s1-t1" name="Mysecondcase" line="14">
+<kw name="Set Test Message" library="BuiltIn">
+<arg>making the bestsellers list, finding thr paticular book</arg>
+<doc>Sets message for the current test case.</doc>
+<msg timestamp="20230603 20:02:26.168" level="INFO">Set test message to:
+making the bestsellers list, finding thr paticular book</msg>
+<status status="PASS" starttime="20230603 20:02:26.167" endtime="20230603 20:02:26.168"/>
+</kw>
+<kw name="Open bestseller page">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${HELION URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230603 20:02:26.169" level="INFO">Opening browser 'Chrome' to base url 'https://helion.pl/kategorie/bestsellery'.</msg>
+<status status="PASS" starttime="20230603 20:02:26.169" endtime="20230603 20:02:46.480"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230603 20:02:46.481" endtime="20230603 20:02:46.714"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>${project_path}/screenshot01.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230603 20:02:46.969" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenyhelion/screenshot01.png"&gt;&lt;img src="screenyhelion/screenshot01.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230603 20:02:46.714" endtime="20230603 20:02:46.969"/>
+</kw>
+<status status="PASS" starttime="20230603 20:02:26.168" endtime="20230603 20:02:46.970"/>
+</kw>
+<kw name="Rodo">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>css:a#rodo-ok</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230603 20:02:46.971" endtime="20230603 20:02:47.015"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css:a#rodo-ok</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230603 20:02:47.015" level="INFO">Clicking element 'css:a#rodo-ok'.</msg>
+<status status="PASS" starttime="20230603 20:02:47.015" endtime="20230603 20:02:47.139"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>${project_path}/screenshot02.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230603 20:02:47.354" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenyhelion/screenshot02.png"&gt;&lt;img src="screenyhelion/screenshot02.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230603 20:02:47.139" endtime="20230603 20:02:47.354"/>
+</kw>
+<status status="PASS" starttime="20230603 20:02:46.970" endtime="20230603 20:02:47.354"/>
+</kw>
+<kw name="Make a list">
+<kw name="Create List" library="BuiltIn">
+<var>@{helionbestseller_text}</var>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20230603 20:02:47.355" level="INFO">@{helionbestseller_text} = [ ]</msg>
+<status status="PASS" starttime="20230603 20:02:47.355" endtime="20230603 20:02:47.355"/>
+</kw>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>${helionbestsellerlist}</var>
+<arg>xpath://div[@id='center-big-col']/div[12]/ol/li[*]/h2</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20230603 20:02:47.404" level="INFO">${helionbestsellerlist} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_96")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement...</msg>
+<status status="PASS" starttime="20230603 20:02:47.355" endtime="20230603 20:02:47.404"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://div[@id='center-big-col']//form[@action='#']//div[@class='kategorieWybor']/div[10]/label[@class='changeBest']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230603 20:02:47.405" level="INFO">Clicking element 'xpath://div[@id='center-big-col']//form[@action='#']//div[@class='kategorieWybor']/div[10]/label[@class='changeBest']'.</msg>
+<status status="PASS" starttime="20230603 20:02:47.404" endtime="20230603 20:02:47.670"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>${project_path}/screenshot03.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20230603 20:02:47.906" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenyhelion/screenshot03.png"&gt;&lt;img src="screenyhelion/screenshot03.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20230603 20:02:47.670" endtime="20230603 20:02:47.906"/>
+</kw>
+<kw name="Log List" library="Collections">
+<arg>${helionbestsellerlist}</arg>
+<doc>Logs the length and contents of the ``list`` using given ``level``.</doc>
+<msg timestamp="20230603 20:02:47.906" level="INFO">List length is 50 and it contains following items:
+0: &lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_96")&gt;
+1: &lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_97")&gt;
+2: &lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_98")&gt;
+3: &lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_99")&gt;
+4: &lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_100")&gt;
+5: &lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_101")&gt;
+6: &lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_102")&gt;
+7: &lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_103")&gt;
+8: &lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_104")&gt;
+9: &lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_105")&gt;
+10: &lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_106")&gt;
+11: &lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_107")&gt;
+12: &lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_108")&gt;
+13: &lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_109")&gt;
+14: &lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_110")&gt;
+15: &lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_111")&gt;
+16: &lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_112")&gt;
+17: &lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_113")&gt;
+18: &lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_114")&gt;
+19: &lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_115")&gt;
+20: &lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_116")&gt;
+21: &lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_117")&gt;
+22: &lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_118")&gt;
+23: &lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_119")&gt;
+24: &lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_120")&gt;
+25: &lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_121")&gt;
+26: &lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_122")&gt;
+27: &lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_123")&gt;
+28: &lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_124")&gt;
+29: &lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_125")&gt;
+30: &lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_126")&gt;
+31: &lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_127")&gt;
+32: &lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_128")&gt;
+33: &lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_129")&gt;
+34: &lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_130")&gt;
+35: &lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_131")&gt;
+36: &lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_132")&gt;
+37: &lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_133")&gt;
+38: &lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_134")&gt;
+39: &lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_135")&gt;
+40: &lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_136")&gt;
+41: &lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_137")&gt;
+42: &lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_138")&gt;
+43: &lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_139")&gt;
+44: &lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_140")&gt;
+45: &lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_141")&gt;
+46: &lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_142")&gt;
+47: &lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_143")&gt;
+48: &lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_144")&gt;
+49: &lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_145")&gt;</msg>
+<status status="PASS" starttime="20230603 20:02:47.906" endtime="20230603 20:02:47.906"/>
+</kw>
+<for flavor="IN">
+<var>${element}</var>
+<value>@{helionbestsellerlist}</value>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_96")&gt;</var>
+<kw name="Append To List" library="Collections">
+<arg>${helionbestseller_text}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230603 20:02:47.907" endtime="20230603 20:02:47.934"/>
+</kw>
+<status status="PASS" starttime="20230603 20:02:47.907" endtime="20230603 20:02:47.934"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_97")&gt;</var>
+<kw name="Append To List" library="Collections">
+<arg>${helionbestseller_text}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230603 20:02:47.934" endtime="20230603 20:02:47.948"/>
+</kw>
+<status status="PASS" starttime="20230603 20:02:47.934" endtime="20230603 20:02:47.948"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_98")&gt;</var>
+<kw name="Append To List" library="Collections">
+<arg>${helionbestseller_text}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230603 20:02:47.949" endtime="20230603 20:02:47.963"/>
+</kw>
+<status status="PASS" starttime="20230603 20:02:47.948" endtime="20230603 20:02:47.964"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_99")&gt;</var>
+<kw name="Append To List" library="Collections">
+<arg>${helionbestseller_text}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230603 20:02:47.964" endtime="20230603 20:02:47.976"/>
+</kw>
+<status status="PASS" starttime="20230603 20:02:47.964" endtime="20230603 20:02:47.977"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_100")&gt;</var>
+<kw name="Append To List" library="Collections">
+<arg>${helionbestseller_text}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230603 20:02:47.977" endtime="20230603 20:02:47.995"/>
+</kw>
+<status status="PASS" starttime="20230603 20:02:47.977" endtime="20230603 20:02:47.995"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_101")&gt;</var>
+<kw name="Append To List" library="Collections">
+<arg>${helionbestseller_text}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230603 20:02:47.996" endtime="20230603 20:02:48.012"/>
+</kw>
+<status status="PASS" starttime="20230603 20:02:47.995" endtime="20230603 20:02:48.012"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_102")&gt;</var>
+<kw name="Append To List" library="Collections">
+<arg>${helionbestseller_text}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230603 20:02:48.012" endtime="20230603 20:02:48.028"/>
+</kw>
+<status status="PASS" starttime="20230603 20:02:48.012" endtime="20230603 20:02:48.028"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_103")&gt;</var>
+<kw name="Append To List" library="Collections">
+<arg>${helionbestseller_text}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230603 20:02:48.029" endtime="20230603 20:02:48.043"/>
+</kw>
+<status status="PASS" starttime="20230603 20:02:48.028" endtime="20230603 20:02:48.043"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_104")&gt;</var>
+<kw name="Append To List" library="Collections">
+<arg>${helionbestseller_text}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230603 20:02:48.044" endtime="20230603 20:02:48.063"/>
+</kw>
+<status status="PASS" starttime="20230603 20:02:48.044" endtime="20230603 20:02:48.063"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_105")&gt;</var>
+<kw name="Append To List" library="Collections">
+<arg>${helionbestseller_text}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230603 20:02:48.063" endtime="20230603 20:02:48.077"/>
+</kw>
+<status status="PASS" starttime="20230603 20:02:48.063" endtime="20230603 20:02:48.077"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_106")&gt;</var>
+<kw name="Append To List" library="Collections">
+<arg>${helionbestseller_text}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230603 20:02:48.077" endtime="20230603 20:02:48.094"/>
+</kw>
+<status status="PASS" starttime="20230603 20:02:48.077" endtime="20230603 20:02:48.094"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_107")&gt;</var>
+<kw name="Append To List" library="Collections">
+<arg>${helionbestseller_text}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230603 20:02:48.095" endtime="20230603 20:02:48.109"/>
+</kw>
+<status status="PASS" starttime="20230603 20:02:48.094" endtime="20230603 20:02:48.109"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_108")&gt;</var>
+<kw name="Append To List" library="Collections">
+<arg>${helionbestseller_text}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230603 20:02:48.109" endtime="20230603 20:02:48.127"/>
+</kw>
+<status status="PASS" starttime="20230603 20:02:48.109" endtime="20230603 20:02:48.127"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_109")&gt;</var>
+<kw name="Append To List" library="Collections">
+<arg>${helionbestseller_text}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230603 20:02:48.127" endtime="20230603 20:02:48.141"/>
+</kw>
+<status status="PASS" starttime="20230603 20:02:48.127" endtime="20230603 20:02:48.141"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_110")&gt;</var>
+<kw name="Append To List" library="Collections">
+<arg>${helionbestseller_text}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230603 20:02:48.141" endtime="20230603 20:02:48.156"/>
+</kw>
+<status status="PASS" starttime="20230603 20:02:48.141" endtime="20230603 20:02:48.157"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_111")&gt;</var>
+<kw name="Append To List" library="Collections">
+<arg>${helionbestseller_text}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230603 20:02:48.157" endtime="20230603 20:02:48.171"/>
+</kw>
+<status status="PASS" starttime="20230603 20:02:48.157" endtime="20230603 20:02:48.171"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_112")&gt;</var>
+<kw name="Append To List" library="Collections">
+<arg>${helionbestseller_text}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230603 20:02:48.171" endtime="20230603 20:02:48.186"/>
+</kw>
+<status status="PASS" starttime="20230603 20:02:48.171" endtime="20230603 20:02:48.186"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_113")&gt;</var>
+<kw name="Append To List" library="Collections">
+<arg>${helionbestseller_text}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230603 20:02:48.186" endtime="20230603 20:02:48.202"/>
+</kw>
+<status status="PASS" starttime="20230603 20:02:48.186" endtime="20230603 20:02:48.202"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_114")&gt;</var>
+<kw name="Append To List" library="Collections">
+<arg>${helionbestseller_text}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230603 20:02:48.203" endtime="20230603 20:02:48.217"/>
+</kw>
+<status status="PASS" starttime="20230603 20:02:48.203" endtime="20230603 20:02:48.217"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_115")&gt;</var>
+<kw name="Append To List" library="Collections">
+<arg>${helionbestseller_text}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230603 20:02:48.217" endtime="20230603 20:02:48.235"/>
+</kw>
+<status status="PASS" starttime="20230603 20:02:48.217" endtime="20230603 20:02:48.235"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_116")&gt;</var>
+<kw name="Append To List" library="Collections">
+<arg>${helionbestseller_text}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230603 20:02:48.235" endtime="20230603 20:02:48.249"/>
+</kw>
+<status status="PASS" starttime="20230603 20:02:48.235" endtime="20230603 20:02:48.249"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_117")&gt;</var>
+<kw name="Append To List" library="Collections">
+<arg>${helionbestseller_text}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230603 20:02:48.250" endtime="20230603 20:02:48.266"/>
+</kw>
+<status status="PASS" starttime="20230603 20:02:48.249" endtime="20230603 20:02:48.266"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_118")&gt;</var>
+<kw name="Append To List" library="Collections">
+<arg>${helionbestseller_text}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230603 20:02:48.266" endtime="20230603 20:02:48.281"/>
+</kw>
+<status status="PASS" starttime="20230603 20:02:48.266" endtime="20230603 20:02:48.281"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_119")&gt;</var>
+<kw name="Append To List" library="Collections">
+<arg>${helionbestseller_text}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230603 20:02:48.281" endtime="20230603 20:02:48.296"/>
+</kw>
+<status status="PASS" starttime="20230603 20:02:48.281" endtime="20230603 20:02:48.296"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_120")&gt;</var>
+<kw name="Append To List" library="Collections">
+<arg>${helionbestseller_text}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230603 20:02:48.297" endtime="20230603 20:02:48.309"/>
+</kw>
+<status status="PASS" starttime="20230603 20:02:48.296" endtime="20230603 20:02:48.309"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_121")&gt;</var>
+<kw name="Append To List" library="Collections">
+<arg>${helionbestseller_text}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230603 20:02:48.309" endtime="20230603 20:02:48.324"/>
+</kw>
+<status status="PASS" starttime="20230603 20:02:48.309" endtime="20230603 20:02:48.325"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_122")&gt;</var>
+<kw name="Append To List" library="Collections">
+<arg>${helionbestseller_text}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230603 20:02:48.325" endtime="20230603 20:02:48.337"/>
+</kw>
+<status status="PASS" starttime="20230603 20:02:48.325" endtime="20230603 20:02:48.337"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_123")&gt;</var>
+<kw name="Append To List" library="Collections">
+<arg>${helionbestseller_text}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230603 20:02:48.337" endtime="20230603 20:02:48.353"/>
+</kw>
+<status status="PASS" starttime="20230603 20:02:48.337" endtime="20230603 20:02:48.353"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_124")&gt;</var>
+<kw name="Append To List" library="Collections">
+<arg>${helionbestseller_text}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230603 20:02:48.353" endtime="20230603 20:02:48.365"/>
+</kw>
+<status status="PASS" starttime="20230603 20:02:48.353" endtime="20230603 20:02:48.366"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_125")&gt;</var>
+<kw name="Append To List" library="Collections">
+<arg>${helionbestseller_text}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230603 20:02:48.366" endtime="20230603 20:02:48.382"/>
+</kw>
+<status status="PASS" starttime="20230603 20:02:48.366" endtime="20230603 20:02:48.382"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_126")&gt;</var>
+<kw name="Append To List" library="Collections">
+<arg>${helionbestseller_text}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230603 20:02:48.383" endtime="20230603 20:02:48.394"/>
+</kw>
+<status status="PASS" starttime="20230603 20:02:48.383" endtime="20230603 20:02:48.394"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_127")&gt;</var>
+<kw name="Append To List" library="Collections">
+<arg>${helionbestseller_text}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230603 20:02:48.394" endtime="20230603 20:02:48.411"/>
+</kw>
+<status status="PASS" starttime="20230603 20:02:48.394" endtime="20230603 20:02:48.412"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_128")&gt;</var>
+<kw name="Append To List" library="Collections">
+<arg>${helionbestseller_text}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230603 20:02:48.412" endtime="20230603 20:02:48.429"/>
+</kw>
+<status status="PASS" starttime="20230603 20:02:48.412" endtime="20230603 20:02:48.429"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_129")&gt;</var>
+<kw name="Append To List" library="Collections">
+<arg>${helionbestseller_text}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230603 20:02:48.430" endtime="20230603 20:02:48.443"/>
+</kw>
+<status status="PASS" starttime="20230603 20:02:48.430" endtime="20230603 20:02:48.443"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_130")&gt;</var>
+<kw name="Append To List" library="Collections">
+<arg>${helionbestseller_text}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230603 20:02:48.444" endtime="20230603 20:02:48.461"/>
+</kw>
+<status status="PASS" starttime="20230603 20:02:48.443" endtime="20230603 20:02:48.461"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_131")&gt;</var>
+<kw name="Append To List" library="Collections">
+<arg>${helionbestseller_text}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230603 20:02:48.462" endtime="20230603 20:02:48.475"/>
+</kw>
+<status status="PASS" starttime="20230603 20:02:48.462" endtime="20230603 20:02:48.475"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_132")&gt;</var>
+<kw name="Append To List" library="Collections">
+<arg>${helionbestseller_text}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230603 20:02:48.475" endtime="20230603 20:02:48.490"/>
+</kw>
+<status status="PASS" starttime="20230603 20:02:48.475" endtime="20230603 20:02:48.490"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_133")&gt;</var>
+<kw name="Append To List" library="Collections">
+<arg>${helionbestseller_text}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230603 20:02:48.491" endtime="20230603 20:02:48.505"/>
+</kw>
+<status status="PASS" starttime="20230603 20:02:48.491" endtime="20230603 20:02:48.506"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_134")&gt;</var>
+<kw name="Append To List" library="Collections">
+<arg>${helionbestseller_text}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230603 20:02:48.506" endtime="20230603 20:02:48.520"/>
+</kw>
+<status status="PASS" starttime="20230603 20:02:48.506" endtime="20230603 20:02:48.520"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_135")&gt;</var>
+<kw name="Append To List" library="Collections">
+<arg>${helionbestseller_text}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230603 20:02:48.520" endtime="20230603 20:02:48.537"/>
+</kw>
+<status status="PASS" starttime="20230603 20:02:48.520" endtime="20230603 20:02:48.537"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_136")&gt;</var>
+<kw name="Append To List" library="Collections">
+<arg>${helionbestseller_text}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230603 20:02:48.537" endtime="20230603 20:02:48.549"/>
+</kw>
+<status status="PASS" starttime="20230603 20:02:48.537" endtime="20230603 20:02:48.549"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_137")&gt;</var>
+<kw name="Append To List" library="Collections">
+<arg>${helionbestseller_text}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230603 20:02:48.549" endtime="20230603 20:02:48.568"/>
+</kw>
+<status status="PASS" starttime="20230603 20:02:48.549" endtime="20230603 20:02:48.568"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_138")&gt;</var>
+<kw name="Append To List" library="Collections">
+<arg>${helionbestseller_text}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230603 20:02:48.568" endtime="20230603 20:02:48.579"/>
+</kw>
+<status status="PASS" starttime="20230603 20:02:48.568" endtime="20230603 20:02:48.579"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_139")&gt;</var>
+<kw name="Append To List" library="Collections">
+<arg>${helionbestseller_text}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230603 20:02:48.580" endtime="20230603 20:02:48.598"/>
+</kw>
+<status status="PASS" starttime="20230603 20:02:48.579" endtime="20230603 20:02:48.598"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_140")&gt;</var>
+<kw name="Append To List" library="Collections">
+<arg>${helionbestseller_text}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230603 20:02:48.598" endtime="20230603 20:02:48.610"/>
+</kw>
+<status status="PASS" starttime="20230603 20:02:48.598" endtime="20230603 20:02:48.611"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_141")&gt;</var>
+<kw name="Append To List" library="Collections">
+<arg>${helionbestseller_text}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230603 20:02:48.611" endtime="20230603 20:02:48.627"/>
+</kw>
+<status status="PASS" starttime="20230603 20:02:48.611" endtime="20230603 20:02:48.627"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_142")&gt;</var>
+<kw name="Append To List" library="Collections">
+<arg>${helionbestseller_text}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230603 20:02:48.628" endtime="20230603 20:02:48.639"/>
+</kw>
+<status status="PASS" starttime="20230603 20:02:48.627" endtime="20230603 20:02:48.640"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_143")&gt;</var>
+<kw name="Append To List" library="Collections">
+<arg>${helionbestseller_text}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230603 20:02:48.640" endtime="20230603 20:02:48.657"/>
+</kw>
+<status status="PASS" starttime="20230603 20:02:48.640" endtime="20230603 20:02:48.657"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_144")&gt;</var>
+<kw name="Append To List" library="Collections">
+<arg>${helionbestseller_text}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230603 20:02:48.657" endtime="20230603 20:02:48.670"/>
+</kw>
+<status status="PASS" starttime="20230603 20:02:48.657" endtime="20230603 20:02:48.670"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_145")&gt;</var>
+<kw name="Append To List" library="Collections">
+<arg>${helionbestseller_text}</arg>
+<arg>${element.text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20230603 20:02:48.671" endtime="20230603 20:02:48.687"/>
+</kw>
+<status status="PASS" starttime="20230603 20:02:48.670" endtime="20230603 20:02:48.687"/>
+</iter>
+<status status="PASS" starttime="20230603 20:02:47.907" endtime="20230603 20:02:48.687"/>
+</for>
+<kw name="Log List" library="Collections">
+<arg>${helionbestseller_text}</arg>
+<doc>Logs the length and contents of the ``list`` using given ``level``.</doc>
+<msg timestamp="20230603 20:02:48.687" level="INFO">List length is 50 and it contains following items:
+0: Cybersecurity w pytaniach i odpowiedziach
+1: Sztuka wojny cyfrowej. Przewodnik dla śledczego po szpiegostwie, oprogramowaniu ransomware i cyberprzestępczości zorganizowanej
+2: Socjotechniki w praktyce. Podręcznik etycznego hakera
+3: Cyberbezpieczeństwo dla bystrzaków. Wydanie II
+4: Etyczny haking. Praktyczne wprowadzenie do hakingu
+5: Kali Linux i testy penetracyjne. Biblia
+6: Bug Bounty Bootcamp. Przewodnik po tropieniu i zgłaszaniu luk w zabezpieczeniach
+7: Cyberbezpieczeństwo dla zaawansowanych. Skuteczne zabezpieczenia systemu Windows, Linux, IoT i infrastruktury w chmurze
+8: Data science od podstaw. Analiza danych w Pythonie. Wydanie II
+9: Socjotechnika. Sztuka zdobywania władzy nad umysłami. Wydanie II
+10: Sztuka podstępu. Łamałem ludzi, nie hasła. Wydanie II
+11: Oszukaj mnie, jeśli potrafisz. Proste sposoby przechytrzenia współczesnych kanciarzy
+12: Kali Linux i zaawansowane testy penetracyjne. Zostań ekspertem cyberbezpieczeństwa za pomocą Metasploit, Nmap, Wireshark i Burp Suite. Wydanie IV
+13: Złam ten kod z Pythonem. Jak tworzyć, testować i łamać szyfry
+14: Podstawy bezpieczeństwa informacji. Praktyczne wprowadzenie
+15: Informatyka śledcza. Gromadzenie, analiza i zabezpieczanie dowodów elektronicznych dla początkujących
+16: Internet. Jak działa naprawdę? Ilustrowany przewodnik po protokołach, prywatności, cenzurze i zarządzaniu
+17: Warsztat hakera. Testy penetracyjne i inne techniki wykrywania podatności
+18: Duch w sieci. Moje przygody jako najbardziej poszukiwanego hakera wszech czasów
+19: Analiza śledcza urządzeń mobilnych. Teoria i praktyka
+20: Przetwarzanie danych w dużej skali. Niezawodność, skalowalność i łatwość konserwacji systemów
+21: Aktywne wykrywanie zagrożeń w systemach IT w praktyce. Wykorzystywanie analizy danych, frameworku ATT&amp;CK oraz narzędzi open source
+22: Sieci VPN. Zdalna praca i bezpieczeństwo danych. Wydanie II rozszerzone
+23: Upoluj cyberprzestępcę. Przewodnik dla hakerów prowadzących śledztwa online
+24: Cyberbroń - broń doskonała. Wojny, akty terroryzmu i zarządzanie strachem w epoce komputerów
+25: Chmura Azure. Praktyczne wprowadzenie dla administratora. Implementacja, monitorowanie i zarządzanie ważnymi usługami i komponentami IaaS/PaaS
+26: Bezpieczeństwo aplikacji internetowych dla programistów. Rzeczywiste zagrożenia, praktyczna ochrona
+27: Blue team i cyberbezpieczeństwo. Zestaw narzędzi dla specjalistów od zabezpieczeń w sieci
+28: Podstawy kryptografii. Wydanie III
+29: Zapory sieciowe w systemie Linux. Kompendium wiedzy o nftables. Wydanie IV
+30: Bezpieczeństwo systemów informatycznych. Zasady i praktyka. Wydanie IV. Tom 1
+31: Bezpieczeństwo sieci firmowej. Kontrola ruchu wychodzącego
+32: Jak działa oprogramowanie? Tajemnice komputerowych mechanizmów szyfrowania, obrazowania, wyszukiwania i innych powszechnie używanych technologii
+33: Hakuj jak duch. Łamanie zabezpieczeń środowisk chmurowych
+34: Blockchain. Przewodnik po technologii łańcucha bloków. Kryptowaluty, inteligentne kontrakty i aplikacje rozproszone
+35: Cyberbezpieczeństwo w bashu. Jak za pomocą wiersza poleceń prowadzić działania zaczepne i obronne
+36: Bezpieczeństwo systemów informatycznych. Zasady i praktyka. Wydanie IV. Tom 2
+37: Bitcoin. Ilustrowany przewodnik
+38: Kali Linux. Testy penetracyjne. Wydanie III
+39: Bezpieczeństwo nowoczesnych aplikacji internetowych. Przewodnik po zabezpieczeniach
+40: Efektywny Kotlin. Najlepsze praktyki
+41: Informatyka śledcza. Przewodnik po narzędziach open source
+42: Wojny w cyberprzestrzeni. Koncepcje, strategie i taktyki, dzięki którym przetrwasz i ocalisz swoją organizację
+43: Mroczne odmęty phishingu. Nie daj się złowić!
+44: Bezpieczeństwo sieci w Pythonie. Rozwiązywanie problemów za pomocą skryptów i bibliotek. Wydanie II
+45: Cyberwojna. Metody działania hakerów
+46: Hakowanie internetu rzeczy w praktyce. Przewodnik po skutecznych metodach atakowania IoT
+47: Strategie Red Team. Ofensywne testowanie zabezpieczeń w praktyce
+48: Poradnik hakera. Kurs video. Inżynieria odwrotna i modyfikacja programów komputerowych
+49: Spring Security. Kurs video. Metody zabezpieczania aplikacji webowych</msg>
+<status status="PASS" starttime="20230603 20:02:48.687" endtime="20230603 20:02:48.688"/>
+</kw>
+<kw name="List Should Contain Value" library="Collections">
+<arg>${helionbestseller_text}</arg>
+<arg>Etyczny haking. Praktyczne wprowadzenie do hakingu</arg>
+<doc>Fails if the ``value`` is not found from ``list``.</doc>
+<status status="PASS" starttime="20230603 20:02:48.688" endtime="20230603 20:02:48.688"/>
+</kw>
+<status status="PASS" starttime="20230603 20:02:47.354" endtime="20230603 20:02:48.688"/>
+</kw>
+<kw name="Find an element">
+<arg>Etyczny haking. Praktyczne wprowadzenie do hakingu</arg>
+<kw name="Set Variable" library="BuiltIn">
+<var>${index}</var>
+<arg>1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230603 20:02:48.690" level="INFO">${index} = 1</msg>
+<status status="PASS" starttime="20230603 20:02:48.690" endtime="20230603 20:02:48.690"/>
+</kw>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>${helionbestsellerlist}</var>
+<arg>xpath://div[@id='center-big-col']/div[12]/ol/li[*]/h2</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20230603 20:02:48.724" level="INFO">${helionbestsellerlist} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_96")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement...</msg>
+<status status="PASS" starttime="20230603 20:02:48.691" endtime="20230603 20:02:48.724"/>
+</kw>
+<for flavor="IN">
+<var>${element}</var>
+<value>@{helionbestsellerlist}</value>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_96")&gt;</var>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>'${element.text}' == '${chosenbook}'</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20230603 20:02:48.725" endtime="20230603 20:02:48.750"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${index}</var>
+<arg>${index} == +1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230603 20:02:48.751" level="INFO">${index} = True</msg>
+<status status="PASS" starttime="20230603 20:02:48.750" endtime="20230603 20:02:48.751"/>
+</kw>
+<status status="PASS" starttime="20230603 20:02:48.724" endtime="20230603 20:02:48.751"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_97")&gt;</var>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>'${element.text}' == '${chosenbook}'</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20230603 20:02:48.751" endtime="20230603 20:02:48.780"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${index}</var>
+<arg>${index} == +1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230603 20:02:48.781" level="INFO">${index} = True</msg>
+<status status="PASS" starttime="20230603 20:02:48.781" endtime="20230603 20:02:48.781"/>
+</kw>
+<status status="PASS" starttime="20230603 20:02:48.751" endtime="20230603 20:02:48.781"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_98")&gt;</var>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>'${element.text}' == '${chosenbook}'</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20230603 20:02:48.781" endtime="20230603 20:02:48.811"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${index}</var>
+<arg>${index} == +1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230603 20:02:48.811" level="INFO">${index} = True</msg>
+<status status="PASS" starttime="20230603 20:02:48.811" endtime="20230603 20:02:48.811"/>
+</kw>
+<status status="PASS" starttime="20230603 20:02:48.781" endtime="20230603 20:02:48.811"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_99")&gt;</var>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>'${element.text}' == '${chosenbook}'</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20230603 20:02:48.812" endtime="20230603 20:02:48.842"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${index}</var>
+<arg>${index} == +1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230603 20:02:48.843" level="INFO">${index} = True</msg>
+<status status="PASS" starttime="20230603 20:02:48.843" endtime="20230603 20:02:48.843"/>
+</kw>
+<status status="PASS" starttime="20230603 20:02:48.811" endtime="20230603 20:02:48.843"/>
+</iter>
+<iter>
+<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="a70dc290438f40eb5cefb05a5dd70a11", element="4A6C5AFB31D363CC3C20FE7905ABE61B_element_100")&gt;</var>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>'${element.text}' == '${chosenbook}'</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<msg timestamp="20230603 20:02:48.874" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20230603 20:02:48.843" endtime="20230603 20:02:48.874"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${index}</var>
+<arg>${index} == +1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20230603 20:02:48.874" endtime="20230603 20:02:48.874"/>
+</kw>
+<status status="PASS" starttime="20230603 20:02:48.843" endtime="20230603 20:02:48.875"/>
+</iter>
+<status status="PASS" starttime="20230603 20:02:48.724" endtime="20230603 20:02:48.875"/>
+</for>
+<status status="PASS" starttime="20230603 20:02:48.689" endtime="20230603 20:02:48.875"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230603 20:02:48.875" endtime="20230603 20:02:51.910"/>
+</kw>
+<doc>opening the bestseller page, accepting privacy notifications, maknig the books' list and finding the particular book</doc>
+<tag>Helion</tag>
+<status status="PASS" starttime="20230603 20:02:26.166" endtime="20230603 20:02:51.911">making the bestsellers list, finding thr paticular book</status>
+</test>
+<doc>My second case includes opening the website selling books, accepting privacy notifications, creating the list of books' bestsellers and finally finding the chosen book in the previously made books' list.</doc>
+<status status="PASS" starttime="20230603 20:02:25.565" endtime="20230603 20:02:51.916"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Helion</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Helion">Helion</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
