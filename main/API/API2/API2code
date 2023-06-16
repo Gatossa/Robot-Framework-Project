@@ -26,7 +26,7 @@ API_GET_TEST 2
     log to console     ${response}
 
 
-API_POST_TEST 2
+API_POST_TEST 1
       [Documentation]    Create booking
       [Tags]    post 2
       set test message    Creating the new booking with new data
